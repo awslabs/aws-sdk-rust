@@ -16,6 +16,7 @@ use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;
 use std::mem;
+use tracing::trace;
 
 /// Wrapper around SegmentedBuf that tracks the state of the stream.
 #[derive(Debug)]
@@ -198,6 +199,7 @@ impl<T, E> Receiver<T, E> {
                         )
                     })?
                 {
+                    trace!(message = ?message, "received complete event stream message");
                     return Ok(Some(message));
                 }
             }
@@ -205,6 +207,7 @@ impl<T, E> Receiver<T, E> {
             self.buffer_next_chunk().await?;
         }
         if self.buffer.has_data() {
+            trace!(remaining_data = ?self.buffer, "data left over in the event stream response stream");
             return Err(SdkError::response_error(
                 ReceiverError {
                     kind: ReceiverErrorKind::UnexpectedEndOfStream,

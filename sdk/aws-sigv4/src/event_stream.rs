@@ -126,6 +126,7 @@ fn sign_payload<'a>(
         params,
     );
     let signature = calculate_signature(signing_key, &string_to_sign);
+    tracing::trace!(canonical_request = ?message_payload, string_to_sign = ?string_to_sign, "calculated signing parameters");
 
     // Generate the signed wrapper event frame
     SigningOutput::new(

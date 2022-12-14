@@ -180,22 +180,23 @@ fn calculate_signing_params<'a>(
     params: &'a SigningParams<'a>,
 ) -> Result<(CalculatedParams, String), SigningError> {
     let creq = CanonicalRequest::from(request, params)?;
-    tracing::trace!(canonical_request = %creq);
 
     let encoded_creq = &sha256_hex_string(creq.to_string().as_bytes());
-    let sts = StringToSign::new(
+    let string_to_sign = StringToSign::new(
         params.time,
         params.region,
         params.service_name,
         encoded_creq,
-    );
+    )
+    .to_string();
     let signing_key = generate_signing_key(
         params.secret_key,
         params.time,
         params.region,
         params.service_name,
     );
-    let signature = calculate_signature(signing_key, sts.to_string().as_bytes());
+    let signature = calculate_signature(signing_key, string_to_sign.as_bytes());
+    tracing::trace!(canonical_request = %creq, string_to_sign = %string_to_sign, "calculated signing parameters");
 
     let values = creq.values.into_query_params().expect("signing with query");
     let mut signing_params = vec![

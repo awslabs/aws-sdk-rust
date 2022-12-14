@@ -13,6 +13,7 @@ use std::fmt::Debug;
 use std::marker::PhantomData;
 use std::pin::Pin;
 use std::task::{Context, Poll};
+use tracing::trace;
 
 /// Input type for Event Streams.
 pub struct EventStreamSender<T, E> {
@@ -150,14 +151,18 @@ impl<T, E: StdError + Send + Sync + 'static> Stream for MessageStreamAdapter<T, 
                             .marshall(message)
                             .map_err(SdkError::construction_failure)?,
                     };
+
+                    trace!(unsigned_message = ?message, "signing event stream message");
                     let message = self
                         .signer
                         .sign(message)
                         .map_err(SdkError::construction_failure)?;
+
                     let mut buffer = Vec::new();
                     message
                         .write_to(&mut buffer)
                         .map_err(SdkError::construction_failure)?;
+                    trace!(signed_message = ?buffer, "sending signed event stream message");
                     Poll::Ready(Some(Ok(Bytes::from(buffer))))
                 } else if !self.end_signal_sent {
                     self.end_signal_sent = true;
@@ -167,6 +172,7 @@ impl<T, E: StdError + Send + Sync + 'static> Stream for MessageStreamAdapter<T, 
                             sign.map_err(SdkError::construction_failure)?
                                 .write_to(&mut buffer)
                                 .map_err(SdkError::construction_failure)?;
+                            trace!(signed_message = ?buffer, "sending signed empty message to terminate the event stream");
                             Poll::Ready(Some(Ok(Bytes::from(buffer))))
                         }
                         None => Poll::Ready(None),

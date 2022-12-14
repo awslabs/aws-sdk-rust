@@ -44,7 +44,7 @@ where
         let (req, property_bag) = req.into_parts();
         let mut inner = self.inner.clone();
         let future = async move {
-            trace!(request = ?req);
+            trace!(request = ?req, "dispatching request");
             inner
                 .call(req)
                 .await
