@@ -61,7 +61,7 @@ version = "0.51.0"
 version = "1.0.0"
 
 [dependencies.fastrand]
-version = "1.0.0"
+version = "1.8.0"
 
 [dependencies.http]
 version = "0.2.0"

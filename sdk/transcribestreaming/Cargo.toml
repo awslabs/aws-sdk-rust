@@ -91,10 +91,10 @@ path = "../aws-smithy-protocol-test"
 version = "0.51.0"
 
 [dev-dependencies.futures-core]
-version = "0.3.0"
+version = "0.3.25"
 
 [dev-dependencies.futures-util]
-version = "0.3.0"
+version = "0.3.25"
 
 [dev-dependencies.hound]
 version = "3.4.0"
@@ -107,8 +107,8 @@ version = "1.8.4"
 features = ["macros", "test-util", "rt-multi-thread"]
 
 [dev-dependencies.tracing-subscriber]
-version = "0.3.15"
-features = ["env-filter"]
+version = "0.3.16"
+features = ["env-filter", "json"]
 
 [features]
 rustls = ["aws-smithy-client/rustls"]
