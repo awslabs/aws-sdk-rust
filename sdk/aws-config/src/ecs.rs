@@ -100,7 +100,7 @@ impl EcsCredentialsProvider {
         let auth = match self.env.get(ENV_AUTHORIZATION).ok() {
             Some(auth) => Some(HeaderValue::from_str(&auth).map_err(|err| {
                 tracing::warn!(token = %auth, "invalid auth token");
-                CredentialsError::invalid_configuration(EcsConfigurationErr::InvalidAuthToken {
+                CredentialsError::invalid_configuration(EcsConfigurationError::InvalidAuthToken {
                     err,
                     value: auth,
                 })
@@ -140,11 +140,11 @@ impl ProvideCredentials for EcsCredentialsProvider {
 enum Provider {
     Configured(HttpCredentialProvider),
     NotConfigured,
-    InvalidConfiguration(EcsConfigurationErr),
+    InvalidConfiguration(EcsConfigurationError),
 }
 
 impl Provider {
-    async fn uri(env: Env, dns: Option<DnsService>) -> Result<Uri, EcsConfigurationErr> {
+    async fn uri(env: Env, dns: Option<DnsService>) -> Result<Uri, EcsConfigurationError> {
         let relative_uri = env.get(ENV_RELATIVE_URI).ok();
         let full_uri = env.get(ENV_FULL_URI).ok();
         if let Some(relative_uri) = relative_uri {
@@ -153,9 +153,9 @@ impl Provider {
             let mut dns = dns.or_else(tokio_dns);
             validate_full_uri(&full_uri, dns.as_mut())
                 .await
-                .map_err(|err| EcsConfigurationErr::InvalidFullUri { err, uri: full_uri })
+                .map_err(|err| EcsConfigurationError::InvalidFullUri { err, uri: full_uri })
         } else {
-            Err(EcsConfigurationErr::NotConfigured)
+            Err(EcsConfigurationError::NotConfigured)
         }
     }
 
@@ -164,7 +164,7 @@ impl Provider {
         let env = provider_config.env();
         let uri = match Self::uri(env, builder.dns).await {
             Ok(uri) => uri,
-            Err(EcsConfigurationErr::NotConfigured) => return Provider::NotConfigured,
+            Err(EcsConfigurationError::NotConfigured) => return Provider::NotConfigured,
             Err(err) => return Provider::InvalidConfiguration(err),
         };
         let http_provider = HttpCredentialProvider::builder()
@@ -179,12 +179,12 @@ impl Provider {
         Provider::Configured(http_provider)
     }
 
-    fn build_full_uri(relative_uri: String) -> Result<Uri, EcsConfigurationErr> {
+    fn build_full_uri(relative_uri: String) -> Result<Uri, EcsConfigurationError> {
         let mut relative_uri = match relative_uri.parse::<Uri>() {
             Ok(uri) => uri,
             Err(invalid_uri) => {
                 tracing::warn!(uri = %DisplayErrorContext(&invalid_uri), "invalid URI loaded from environment");
-                return Err(EcsConfigurationErr::InvalidRelativeUri {
+                return Err(EcsConfigurationError::InvalidRelativeUri {
                     err: invalid_uri,
                     uri: relative_uri,
                 });
@@ -197,7 +197,7 @@ impl Provider {
 }
 
 #[derive(Debug)]
-enum EcsConfigurationErr {
+enum EcsConfigurationError {
     InvalidRelativeUri {
         err: InvalidUri,
         uri: String,
@@ -213,22 +213,22 @@ enum EcsConfigurationErr {
     NotConfigured,
 }
 
-impl Display for EcsConfigurationErr {
+impl Display for EcsConfigurationError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            EcsConfigurationErr::InvalidRelativeUri { err, uri } => write!(
+            EcsConfigurationError::InvalidRelativeUri { err, uri } => write!(
                 f,
                 "invalid relative URI for ECS provider ({}): {}",
                 err, uri
             ),
-            EcsConfigurationErr::InvalidFullUri { err, uri } => {
+            EcsConfigurationError::InvalidFullUri { err, uri } => {
                 write!(f, "invalid full URI for ECS provider ({}): {}", err, uri)
             }
-            EcsConfigurationErr::NotConfigured => write!(
+            EcsConfigurationError::NotConfigured => write!(
                 f,
                 "No environment variables were set to configure ECS provider"
             ),
-            EcsConfigurationErr::InvalidAuthToken { err, value } => write!(
+            EcsConfigurationError::InvalidAuthToken { err, value } => write!(
                 f,
                 "`{}` could not be used as a header value for the auth token. {}",
                 value, err
@@ -237,12 +237,13 @@ impl Display for EcsConfigurationErr {
     }
 }
 
-impl Error for EcsConfigurationErr {
+impl Error for EcsConfigurationError {
     fn source(&self) -> Option<&(dyn Error + 'static)> {
         match &self {
-            EcsConfigurationErr::InvalidRelativeUri { err, .. } => Some(err),
-            EcsConfigurationErr::InvalidFullUri { err, .. } => Some(err),
-            _ => None,
+            EcsConfigurationError::InvalidRelativeUri { err, .. } => Some(err),
+            EcsConfigurationError::InvalidFullUri { err, .. } => Some(err),
+            EcsConfigurationError::InvalidAuthToken { err, .. } => Some(err),
+            EcsConfigurationError::NotConfigured => None,
         }
     }
 }
@@ -303,12 +304,8 @@ impl Builder {
     }
 }
 
-/// Invalid Full URI
-///
-/// When the full URI setting is used, the URI must either be HTTPS or point to a loopback interface.
 #[derive(Debug)]
-#[non_exhaustive]
-pub enum InvalidFullUriError {
+enum InvalidFullUriErrorKind {
     /// The provided URI could not be parsed as a URI
     #[non_exhaustive]
     InvalidUri(InvalidUri),
@@ -329,33 +326,48 @@ pub enum InvalidFullUriError {
     DnsLookupFailed(io::Error),
 }
 
+/// Invalid Full URI
+///
+/// When the full URI setting is used, the URI must either be HTTPS or point to a loopback interface.
+#[derive(Debug)]
+pub struct InvalidFullUriError {
+    kind: InvalidFullUriErrorKind,
+}
+
 impl Display for InvalidFullUriError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        match self {
-            InvalidFullUriError::InvalidUri(err) => write!(f, "URI was invalid: {}", err),
-            InvalidFullUriError::MissingHost => write!(f, "URI did not specify a host"),
-            InvalidFullUriError::NotLoopback => {
+        use InvalidFullUriErrorKind::*;
+        match self.kind {
+            InvalidUri(_) => write!(f, "URI was invalid"),
+            MissingHost => write!(f, "URI did not specify a host"),
+            NotLoopback => {
                 write!(f, "URI did not refer to the loopback interface")
             }
-            InvalidFullUriError::DnsLookupFailed(err) => {
+            DnsLookupFailed(_) => {
                 write!(
                     f,
-                    "failed to perform DNS lookup while validating URI: {}",
-                    err
+                    "failed to perform DNS lookup while validating URI"
                 )
             }
-            InvalidFullUriError::NoDnsService => write!(f, "No DNS service was provided. Enable `rt-tokio` or provide a `dns` service to the builder.")
+            NoDnsService => write!(f, "no DNS service was provided. Enable `rt-tokio` or provide a `dns` service to the builder.")
         }
     }
 }
 
 impl Error for InvalidFullUriError {
     fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match self {
-            InvalidFullUriError::InvalidUri(err) => Some(err),
-            InvalidFullUriError::DnsLookupFailed(err) => Some(err),
+        use InvalidFullUriErrorKind::*;
+        match &self.kind {
+            InvalidUri(err) => Some(err),
+            DnsLookupFailed(err) => Some(err),
             _ => None,
         }
+    }
+}
+
+impl From<InvalidFullUriErrorKind> for InvalidFullUriError {
+    fn from(kind: InvalidFullUriErrorKind) -> Self {
+        Self { kind }
     }
 }
 
@@ -374,20 +386,20 @@ async fn validate_full_uri(
 ) -> Result<Uri, InvalidFullUriError> {
     let uri = uri
         .parse::<Uri>()
-        .map_err(InvalidFullUriError::InvalidUri)?;
+        .map_err(InvalidFullUriErrorKind::InvalidUri)?;
     if uri.scheme() == Some(&Scheme::HTTPS) {
         return Ok(uri);
     }
     // For HTTP URIs, we need to validate that it points to a loopback address
-    let host = uri.host().ok_or(InvalidFullUriError::MissingHost)?;
+    let host = uri.host().ok_or(InvalidFullUriErrorKind::MissingHost)?;
     let is_loopback = match host.parse::<IpAddr>() {
         Ok(addr) => addr.is_loopback(),
         Err(_domain_name) => {
-            let dns = dns.ok_or(InvalidFullUriError::NoDnsService)?;
-            dns.ready().await.map_err(InvalidFullUriError::DnsLookupFailed)?
+            let dns = dns.ok_or(InvalidFullUriErrorKind::NoDnsService)?;
+            dns.ready().await.map_err(InvalidFullUriErrorKind::DnsLookupFailed)?
                     .call(host.to_owned())
                     .await
-                    .map_err(InvalidFullUriError::DnsLookupFailed)?
+                    .map_err(InvalidFullUriErrorKind::DnsLookupFailed)?
                     .iter()
                     .all(|addr| {
                         if !addr.is_loopback() {
@@ -402,7 +414,7 @@ async fn validate_full_uri(
     };
     match is_loopback {
         true => Ok(uri),
-        false => Err(InvalidFullUriError::NotLoopback),
+        false => Err(InvalidFullUriErrorKind::NotLoopback.into()),
     }
 }
 
@@ -459,7 +471,7 @@ mod test {
 
     use crate::ecs::{
         tokio_dns, validate_full_uri, Builder, EcsCredentialsProvider, InvalidFullUriError,
-        Provider,
+        InvalidFullUriErrorKind, Provider,
     };
     use crate::provider_config::ProviderConfig;
     use crate::test_case::GenericTestResult;
@@ -547,7 +559,12 @@ mod test {
             .unwrap()
             .expect_err("DNS service is required");
         assert!(
-            matches!(no_dns_error, InvalidFullUriError::NoDnsService),
+            matches!(
+                no_dns_error,
+                InvalidFullUriError {
+                    kind: InvalidFullUriErrorKind::NoDnsService
+                }
+            ),
             "expected no dns service, got: {}",
             no_dns_error
         );
@@ -567,7 +584,12 @@ mod test {
             .now_or_never()
             .unwrap()
             .expect_err("not a loopback");
-        assert!(matches!(err, InvalidFullUriError::NotLoopback));
+        assert!(matches!(
+            err,
+            InvalidFullUriError {
+                kind: InvalidFullUriErrorKind::NotLoopback
+            }
+        ));
     }
 
     #[test]
@@ -594,7 +616,12 @@ mod test {
             .now_or_never()
             .unwrap();
         assert!(
-            matches!(resp, Err(InvalidFullUriError::NotLoopback)),
+            matches!(
+                resp,
+                Err(InvalidFullUriError {
+                    kind: InvalidFullUriErrorKind::NotLoopback
+                })
+            ),
             "Should be invalid: {:?}",
             resp
         );
@@ -703,7 +730,16 @@ mod test {
         let err = validate_full_uri("http://www.amazon.com/creds", dns.as_mut())
             .await
             .expect_err("not a loopback");
-        assert!(matches!(err, InvalidFullUriError::NotLoopback), "{:?}", err);
+        assert!(
+            matches!(
+                err,
+                InvalidFullUriError {
+                    kind: InvalidFullUriErrorKind::NotLoopback
+                }
+            ),
+            "{:?}",
+            err
+        );
         assert!(logs_contain(
             "Address does not resolve to the loopback interface"
         ));
