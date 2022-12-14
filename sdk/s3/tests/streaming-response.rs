@@ -1,0 +1,140 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+use aws_sdk_s3::{Credentials, Endpoint, Region};
+use bytes::BytesMut;
+use std::future::Future;
+use std::net::SocketAddr;
+use std::time::Duration;
+use tracing::debug;
+
+// test will hang forever with the default (single-threaded) test executor
+#[tokio::test(flavor = "multi_thread")]
+#[should_panic(
+    expected = "error reading a body from connection: end of file before message length reached"
+)]
+async fn test_streaming_response_fails_when_eof_comes_before_content_length_reached() {
+    // We spawn a faulty server that will close the connection after
+    // writing half of the response body.
+    let (server, server_addr) = start_faulty_server().await;
+    let _ = tokio::spawn(server);
+
+    let creds = Credentials::new(
+        "ANOTREAL",
+        "notrealrnrELgWzOk3IfjzDKtFBhDby",
+        Some("notarealsessiontoken".to_string()),
+        None,
+        "test",
+    );
+
+    let conf = aws_sdk_s3::Config::builder()
+        .credentials_provider(creds)
+        .region(Region::new("us-east-1"))
+        .endpoint_resolver(Endpoint::immutable(
+            format!("http://{server_addr}").parse().expect("valid URI"),
+        ))
+        .build();
+
+    let client = aws_sdk_s3::client::Client::from_conf(conf);
+
+    // This will succeed b/c the head of the response is fine.
+    let res = client
+        .get_object()
+        .bucket("some-test-bucket")
+        .key("test.txt")
+        .send()
+        .await
+        .unwrap();
+
+    // Should panic here when the body is read with an "UnexpectedEof" error
+    if let Err(e) = res.body.collect().await {
+        panic!("{e}")
+    }
+}
+
+async fn start_faulty_server() -> (impl Future<Output = ()>, SocketAddr) {
+    use tokio::net::{TcpListener, TcpStream};
+    use tokio::time::sleep;
+
+    let listener = TcpListener::bind("0.0.0.0:0")
+        .await
+        .expect("socket is free");
+    let bind_addr = listener.local_addr().unwrap();
+
+    async fn process_socket(socket: TcpStream) {
+        let mut buf = BytesMut::new();
+        let response: &[u8] = br#"HTTP/1.1 200 OK
+x-amz-request-id: 4B4NGF0EAWN0GE63
+content-length: 12
+etag: 3e25960a79dbc69b674cd4ec67a72c62
+content-type: application/octet-stream
+server: AmazonS3
+content-encoding:
+last-modified: Tue, 21 Jun 2022 16:29:14 GMT
+date: Tue, 21 Jun 2022 16:29:23 GMT
+x-amz-id-2: kPl+IVVZAwsN8ePUyQJZ40WD9dzaqtr4eNESArqE68GSKtVvuvCTDe+SxhTT+JTUqXB1HL4OxNM=
+accept-ranges: bytes
+
+Hello"#;
+        let mut time_to_respond = false;
+
+        loop {
+            match socket.try_read_buf(&mut buf) {
+                Ok(0) => {
+                    unreachable!(
+                        "The connection will be closed before this branch is ever reached"
+                    );
+                }
+                Ok(n) => {
+                    debug!("read {n} bytes from the socket");
+                    if let Ok(s) = std::str::from_utf8(&buf) {
+                        debug!("buf currently looks like:\n{s:?}");
+                    }
+
+                    // Check for CRLF to see if we've received the entire HTTP request.
+                    if buf.ends_with(b"\r\n\r\n") {
+                        time_to_respond = true;
+                    }
+                }
+                Err(e) if e.kind() == std::io::ErrorKind::WouldBlock => {
+                    debug!("reading would block, sleeping for 1ms and then trying again");
+                    sleep(Duration::from_millis(1)).await;
+                }
+                Err(e) => {
+                    panic!("{e}")
+                }
+            }
+
+            if socket.writable().await.is_ok() {
+                if time_to_respond {
+                    // The content length is 12 but we'll only write 5 bytes
+                    socket.try_write(&response).unwrap();
+                    // We break from the R/W loop after sending a partial response in order to
+                    // close the connection early.
+                    debug!("faulty server has written partial response, now closing connection");
+                    break;
+                }
+            }
+        }
+    }
+
+    let fut = async move {
+        loop {
+            let (socket, addr) = listener
+                .accept()
+                .await
+                .expect("listener can accept new connections");
+            debug!("server received new connection from {addr:?}");
+            let start = std::time::Instant::now();
+            process_socket(socket).await;
+            debug!(
+                "connection to {addr:?} closed after {:.02?}",
+                start.elapsed()
+            );
+        }
+    };
+
+    (fut, bind_addr)
+}
